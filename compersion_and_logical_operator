@@ -1,0 +1,1830 @@
+> show dbs
+admin       0.000GB
+assignment  0.000GB
+config      0.000GB
+local       0.000GB
+test        0.000GB
+> use movie
+switched to db movie
+> db.createCollection(')
+uncaught exception: SyntaxError: '' literal not terminated before end of script :
+@(shell):1:22
+> db.createCollection('movies')
+{ "ok" : 1 }
+> db.movies.find({}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "movie_genre" : "Drama|Romance|Western",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+Type "it" for more
+> db.movies.find({"movie_name":{$eq:"Letting Go of God"}}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+> db.movies.find({"movie_name":{$ne:"Letting Go of God"}}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "movie_genre" : "Drama|Romance|Western",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b85"),
+        "id" : 21,
+        "movie_name" : "Christmas in Connecticut",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2015,
+        "budget" : 10120
+}
+Type "it" for more
+> db.movies.find({"budget":{$gt:12462}}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b86"),
+        "id" : 22,
+        "movie_name" : "Very Thought of You, The",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1998,
+        "budget" : 19265
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b89"),
+        "id" : 25,
+        "movie_name" : "Pépé le Moko",
+        "movie_genre" : "Crime|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 18186
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8b"),
+        "id" : 27,
+        "movie_name" : "Androcles and the Lion",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 14753
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8d"),
+        "id" : 29,
+        "movie_name" : "Time Tracers",
+        "movie_genre" : "Action|Adventure|Sci-Fi",
+        "production_year" : 2000,
+        "budget" : 19851
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8e"),
+        "id" : 30,
+        "movie_name" : "Prime",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1998,
+        "budget" : 15675
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8f"),
+        "id" : 31,
+        "movie_name" : "High Noon",
+        "movie_genre" : "Drama|Western",
+        "production_year" : 2001,
+        "budget" : 15992
+}
+Type "it" for more
+> db.movies.find({"budget":{$lt:14753}}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "movie_genre" : "Drama|Romance|Western",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b85"),
+        "id" : 21,
+        "movie_name" : "Christmas in Connecticut",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2015,
+        "budget" : 10120
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b87"),
+        "id" : 23,
+        "movie_name" : "Claustrofobia",
+        "movie_genre" : "Thriller",
+        "production_year" : 1997,
+        "budget" : 12335
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8a"),
+        "id" : 26,
+        "movie_name" : "Three Kings",
+        "movie_genre" : "Action|Adventure|Comedy|Drama|War",
+        "production_year" : 1996,
+        "budget" : 11998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8c"),
+        "id" : 28,
+        "movie_name" : "Post Grad",
+        "movie_genre" : "Comedy",
+        "production_year" : 1997,
+        "budget" : 11410
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b93"),
+        "id" : 35,
+        "movie_name" : "Bad News Bears, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2012,
+        "budget" : 10138
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b94"),
+        "id" : 36,
+        "movie_name" : "Alice in the Cities (Alice in den Stadten)",
+        "movie_genre" : "Drama",
+        "production_year" : 2002,
+        "budget" : 10480
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b96"),
+        "id" : 38,
+        "movie_name" : "Pretty Maids All in a Row",
+        "movie_genre" : "Comedy|Crime|Thriller",
+        "production_year" : 1996,
+        "budget" : 11081
+}
+Type "it" for more
+> db.movies.find({$and:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b85"),
+        "id" : 21,
+        "movie_name" : "Christmas in Connecticut",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2015,
+        "budget" : 10120
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b89"),
+        "id" : 25,
+        "movie_name" : "Pépé le Moko",
+        "movie_genre" : "Crime|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 18186
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8b"),
+        "id" : 27,
+        "movie_name" : "Androcles and the Lion",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 14753
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8f"),
+        "id" : 31,
+        "movie_name" : "High Noon",
+        "movie_genre" : "Drama|Western",
+        "production_year" : 2001,
+        "budget" : 15992
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b90"),
+        "id" : 32,
+        "movie_name" : "Fast Food, Fast Women",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2018,
+        "budget" : 18612
+}
+Type "it" for more
+> db.movies.find({$or:[{"production_year":{$gt:2000}},{"budget":{$gt:10000}}]}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "movie_genre" : "Drama|Romance|Western",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+Type "it" for more
+> db.movies.find({$nor:[{"production_year":2000},{"budget":10000}]}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "movie_genre" : "Drama|Romance|Western",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "movie_genre" : "Action|Crime|Drama|Thriller",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "movie_genre" : "Drama|War",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+Type "it" for more
+> db.movies.find({$and:[{"production_year":{$gt:2000}},{}]}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b85"),
+        "id" : 21,
+        "movie_name" : "Christmas in Connecticut",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2015,
+        "budget" : 10120
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b89"),
+        "id" : 25,
+        "movie_name" : "Pépé le Moko",
+        "movie_genre" : "Crime|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 18186
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8b"),
+        "id" : 27,
+        "movie_name" : "Androcles and the Lion",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 14753
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8f"),
+        "id" : 31,
+        "movie_name" : "High Noon",
+        "movie_genre" : "Drama|Western",
+        "production_year" : 2001,
+        "budget" : 15992
+}
+Type "it" for more
+>
+> db.movies.find({$and:[{"production_year":{$gt:2000}},{"production_year":{$lt:2021}}]}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "movie_genre" : "Drama",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "movie_genre" : "Documentary",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "movie_genre" : "Documentary",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "movie_genre" : "Drama",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "movie_genre" : "Drama|Musical|Romance",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "movie_genre" : "Drama",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "movie_genre" : "Comedy|Documentary",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b85"),
+        "id" : 21,
+        "movie_name" : "Christmas in Connecticut",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2015,
+        "budget" : 10120
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b89"),
+        "id" : 25,
+        "movie_name" : "Pépé le Moko",
+        "movie_genre" : "Crime|Drama|Romance",
+        "production_year" : 2007,
+        "budget" : 18186
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8b"),
+        "id" : 27,
+        "movie_name" : "Androcles and the Lion",
+        "movie_genre" : "Comedy",
+        "production_year" : 2009,
+        "budget" : 14753
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b8f"),
+        "id" : 31,
+        "movie_name" : "High Noon",
+        "movie_genre" : "Drama|Western",
+        "production_year" : 2001,
+        "budget" : 15992
+}
+Type "it" for more
+> db.movies.find({}).sort({production_year:-1, movie_name:1}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738e26"),
+        "id" : 694,
+        "movie_name" : "Abraham's Valley (Vale Abraão)",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 15342
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738ea9"),
+        "id" : 825,
+        "movie_name" : "Babes on Broadway",
+        "movie_genre" : "Comedy|Musical|Romance",
+        "production_year" : 2020,
+        "budget" : 12270
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738c69"),
+        "id" : 249,
+        "movie_name" : "Back to the Future Part III",
+        "movie_genre" : "Adventure|Comedy|Sci-Fi|Western",
+        "production_year" : 2020,
+        "budget" : 13957
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738f22"),
+        "id" : 946,
+        "movie_name" : "Beyond Re-Animator",
+        "movie_genre" : "Horror",
+        "production_year" : 2020,
+        "budget" : 13767
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738bc0"),
+        "id" : 80,
+        "movie_name" : "Bloody Angels (1732 Høtten: Marerittet har et postnummer)",
+        "movie_genre" : "Thriller",
+        "production_year" : 2020,
+        "budget" : 15605
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738bfe"),
+        "id" : 142,
+        "movie_name" : "Boy on a Dolphin",
+        "movie_genre" : "Adventure|Romance",
+        "production_year" : 2020,
+        "budget" : 14911
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b88"),
+        "id" : 24,
+        "movie_name" : "Brandon Teena Story, The",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 13576
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738d15"),
+        "id" : 421,
+        "movie_name" : "Chronicle",
+        "movie_genre" : "Action|Sci-Fi|Thriller",
+        "production_year" : 2020,
+        "budget" : 18195
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738eb6"),
+        "id" : 838,
+        "movie_name" : "Congorama",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2020,
+        "budget" : 18067
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738dc8"),
+        "id" : 600,
+        "movie_name" : "Death Becomes Her",
+        "movie_genre" : "Comedy|Fantasy",
+        "production_year" : 2020,
+        "budget" : 11922
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738e3d"),
+        "id" : 717,
+        "movie_name" : "Devil's Doorway",
+        "movie_genre" : "Western",
+        "production_year" : 2020,
+        "budget" : 19476
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738e85"),
+        "id" : 789,
+        "movie_name" : "Fun on a Weekend",
+        "movie_genre" : "(no genres listed)",
+        "production_year" : 2020,
+        "budget" : 16083
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738c75"),
+        "id" : 261,
+        "movie_name" : "Hellsinki (Rööperi)",
+        "movie_genre" : "Crime",
+        "production_year" : 2020,
+        "budget" : 11177
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738e6d"),
+        "id" : 765,
+        "movie_name" : "Hotel Hell Vacation",
+        "movie_genre" : "Comedy",
+        "production_year" : 2020,
+        "budget" : 17778
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738c55"),
+        "id" : 229,
+        "movie_name" : "Hotel Transylvania",
+        "movie_genre" : "Animation|Children|Comedy",
+        "production_year" : 2020,
+        "budget" : 9724
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738e78"),
+        "id" : 776,
+        "movie_name" : "How to Murder Your Wife",
+        "movie_genre" : "Comedy",
+        "production_year" : 2020,
+        "budget" : 16500
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738f07"),
+        "id" : 919,
+        "movie_name" : "Infamous",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 19361
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738c25"),
+        "id" : 181,
+        "movie_name" : "International House",
+        "movie_genre" : "Comedy",
+        "production_year" : 2020,
+        "budget" : 18679
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738ea1"),
+        "id" : 817,
+        "movie_name" : "Kivski Freski",
+        "movie_genre" : "Drama",
+        "production_year" : 2020,
+        "budget" : 11301
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738f52"),
+        "id" : 994,
+        "movie_name" : "Life and Adventures of Santa Claus, The",
+        "movie_genre" : "Animation|Children",
+        "production_year" : 2020,
+        "budget" : 15895
+}
+Type "it" for more
+> db.movies.find({}).skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "movie_genre" : "Comedy",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "movie_genre" : "Action|Horror|Thriller",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "movie_genre" : "Crime|Drama|Thriller",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "movie_genre" : "Drama|Romance|War",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+> db.movies.find({},{movie_genre:0}).limit(10)..pretty()
+uncaught exception: SyntaxError: missing name after . operator :
+@(shell):1:45
+> db.movies.find({},{"movie_genre":0}).pretty()
+{
+        "_id" : ObjectId("619ce475039c31010d738b71"),
+        "id" : 1,
+        "movie_name" : "Keep the Lights On",
+        "production_year" : 2017,
+        "budget" : 15826
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b72"),
+        "id" : 2,
+        "movie_name" : "En rachâchant",
+        "production_year" : 2016,
+        "budget" : 9535
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b73"),
+        "id" : 3,
+        "movie_name" : "That's Entertainment! III",
+        "production_year" : 2016,
+        "budget" : 12959
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b74"),
+        "id" : 4,
+        "movie_name" : "Jericho Mile, The",
+        "production_year" : 1997,
+        "budget" : 14998
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b75"),
+        "id" : 5,
+        "movie_name" : "Detective, The",
+        "production_year" : 2015,
+        "budget" : 19646
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b76"),
+        "id" : 6,
+        "movie_name" : "Love Comes Softly",
+        "production_year" : 1998,
+        "budget" : 10498
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b77"),
+        "id" : 7,
+        "movie_name" : "My Brother the Terrorist",
+        "production_year" : 2017,
+        "budget" : 13657
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b78"),
+        "id" : 8,
+        "movie_name" : "Ray",
+        "production_year" : 2001,
+        "budget" : 18074
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b79"),
+        "id" : 9,
+        "movie_name" : "Paris 36 (Faubourg 36)",
+        "production_year" : 2010,
+        "budget" : 10366
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7a"),
+        "id" : 10,
+        "movie_name" : "Son, The (Le fils)",
+        "production_year" : 2011,
+        "budget" : 10814
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7b"),
+        "id" : 11,
+        "movie_name" : "Rally On! (Ralliraita)",
+        "production_year" : 2007,
+        "budget" : 13972
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7c"),
+        "id" : 12,
+        "movie_name" : "Land of the Dead",
+        "production_year" : 2005,
+        "budget" : 16884
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7d"),
+        "id" : 13,
+        "movie_name" : "Calling Dr. Gillespie",
+        "production_year" : 2008,
+        "budget" : 11531
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7e"),
+        "id" : 14,
+        "movie_name" : "Red State",
+        "production_year" : 2020,
+        "budget" : 16134
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b7f"),
+        "id" : 15,
+        "movie_name" : "To the Shores of Tripoli",
+        "production_year" : 2013,
+        "budget" : 16736
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b80"),
+        "id" : 16,
+        "movie_name" : "Dark Blue",
+        "production_year" : 1990,
+        "budget" : 12462
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b81"),
+        "id" : 17,
+        "movie_name" : "Mongol",
+        "production_year" : 1994,
+        "budget" : 16583
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b82"),
+        "id" : 18,
+        "movie_name" : "Letting Go of God",
+        "production_year" : 2011,
+        "budget" : 11710
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b83"),
+        "id" : 19,
+        "movie_name" : "Good Evening, Mr. Wallenberg (God afton, Herr Wallenberg)",
+        "production_year" : 1990,
+        "budget" : 14014
+}
+{
+        "_id" : ObjectId("619ce475039c31010d738b84"),
+        "id" : 20,
+        "movie_name" : "Truth About Emanuel, The",
+        "production_year" : 2016,
+        "budget" : 14387
+}
+Type "it" for more
+>
